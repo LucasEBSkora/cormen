@@ -1,0 +1,21 @@
+unsigned int i = 0;
+
+while (i < comprimento(A) && A[i] != v) ++i;
+
+if (i == comprimento(A)) return NIL;
+else return i;
+
+
+
+
+loop invariante - O conjunto A[0..i-1] nunca contém a chave v:
+
+1 - Inicialização: Antes de começarmos a executar o loop, o conjunto A[0..i-1] não contém o número desejado.
+Prova: Como i começa em 0, o conjunto A[0..-1] nem existe para conter o valor.
+
+2 - Manutenção: Antes de cada iteração, já verificamos que todo elemento à esquerda de i não é igual à v, 
+e, portanto a[0..i-1] não o conterá.
+
+3 - Término: Quando terminamos o algoritmo, ou i = comprimento(A), ou seja, verificamos 
+todo o conjunto e não encontramos v, ou A[i] é a primeira ocorrência de v, e, portanto,
+todo número à esquerda não será v.
