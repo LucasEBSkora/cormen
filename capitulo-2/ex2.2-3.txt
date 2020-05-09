@@ -1,0 +1,4 @@
+no melhor caso, a busca linear precisa de Theta(1) operações,
+quando a chave desejada já está na primeira posição.
+no pior caso, quando a chave está na última posição ou não existe, 
+a busca precisa de Theta(n) operações/comparações.

@@ -4,6 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void ordenarInsercao(int* A, unsigned int tamanho) {
+  unsigned int i;
+  int j;
+  for( i = 1; i < tamanho; ++i) {
+    int valor = A[i];
+    j = i - 1;
+    for (; j >= 0 && A[j] > valor; --j) A[j+1] = A[j];
+    A[j + 1] = valor;
+  }  
+}
+
 int main(int argc, char** argv) {
   if (argc != 2) {
     printf("Utiizacao: ex n\n\tonde:\n\t\tn = tamanho do conjunto aleatorio a ordenar\n");
@@ -14,20 +25,12 @@ int main(int argc, char** argv) {
 
 
   int* A = geraVetorAleatorioEmIntervalo(tamanho, 0, 100);
-
-  unsigned int i;
-  int j;
-  
+    
   // imprimirVetor(A, tamanho);
 
   float t0 = getTempoAtual();
 
-  for( i = 1; i < tamanho; ++i) {
-    int valor = A[i];
-    j = i - 1;
-    for (; j >= 0 && A[j] > valor; --j) A[j+1] = A[j];
-    A[j + 1] = valor;
-  }  
+  ordenarInsercao(A, tamanho);
 
   float tf = getTempoAtual();
 

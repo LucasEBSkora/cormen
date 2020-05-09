@@ -1,0 +1,20 @@
+se T(n) = {2, se n = 2
+           2T(n/2) + n se n > 2^k, para k>1
+T(n) = n lg n
+
+(onde lg é base 2)
+
+caso base:
+
+    T(2) = 2 = 2*lg(2) = 2*1 = 2
+
+caso recursivo:
+
+    t(2^m) = 2*T((2^m)/2)+ 2^m = 2*T(2^(m-1)) + 2^m
+
+      T(2^(m-1)) = 2^(m-1)*lg(2^(m-1)) = 2^(m-1)*(m-1)
+
+    t(2^m) = 2* 2^(m-1)*(m-1) + 2^m = 2^(m)*(m-1) + 2^m = 2^m*(m - 1 + 1) + 2^m*m = 
+    2^m*lg(2^m)
+
+    qed

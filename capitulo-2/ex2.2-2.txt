@@ -1,0 +1,16 @@
+for i <- 0 to Comprimento[A] - 1 
+  menor <- i
+  for j <- i to Comprimento[A]
+    if A[j] < A[menor]
+      menor = j
+    j <- j + 1
+  valor = A[menor]
+  A[menor] = A[i]
+  A[i] = valor
+  i <- i + 1
+
+  o loop invariante é o mesmo da ordenação por inserção:
+  os elementos <a0...ai> de A estão sempre ordenados em todos os passos
+
+  melhor caso = Theta(n²)
+  pior caso = Theta(n²)
